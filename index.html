@@ -9,11 +9,11 @@
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Manrope:wght@400;500;600;700&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
 <style>
 :root{
-  --paper:#0B1A1B; --card:#152B2C; --card2:#1B3334; --ink:#EAF3F2; --ink2:#AEC3C0;
-  --teal:#26B3A6; --teal-d:#3AC8BB; --teal-t:rgba(38,179,166,.15);
-  --brass:#D6A43F; --brass-d:#E6BC6A; --brass-t:rgba(214,164,63,.15);
-  --muted:#7C938F; --line:#274241; --line2:#1E3433;
-  --red:#E5715E;
+  --paper:#0B1A1B; --card:#152B2C; --card2:#1B3334; --ink:#FFFFFF; --ink2:#F2F8F7;
+  --teal:#26B3A6; --teal-d:#4ADCCE; --teal-t:rgba(38,179,166,.15);
+  --brass:#D6A43F; --brass-d:#F0CB7E; --brass-t:rgba(214,164,63,.15);
+  --muted:#DCE9E6; --line:#2A4645; --line2:#1E3433;
+  --red:#F08573;
   --shadow:0 1px 2px rgba(0,0,0,.35),0 14px 36px rgba(0,0,0,.42);
   --f-disp:'Sora',-apple-system,sans-serif;
   --f-ui:'Manrope',-apple-system,'Segoe UI',sans-serif;
@@ -54,9 +54,9 @@ body[dir=rtl] .brand .nm{font-family:var(--f-ar)}
 .home-hero .ey{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--teal-d)}
 .home-hero h1{font-family:var(--f-disp);font-weight:800;font-size:29px;line-height:1.18;letter-spacing:-.02em;margin:10px 0}
 body[dir=rtl] .home-hero h1{font-family:var(--f-ar)}
-.home-hero p{color:var(--ink2);font-size:14.5px;max-width:42ch;margin:0 auto}
+.home-hero p{color:#D8E6E3;font-size:14.5px;max-width:42ch;margin:0 auto}
 .choose{display:flex;flex-direction:column;gap:13px;margin-top:24px}
-.choice{display:flex;align-items:center;gap:15px;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:20px;cursor:pointer;transition:.18s;text-align:start;box-shadow:var(--shadow)}
+.choice{display:flex;align-items:center;gap:15px;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:20px;cursor:pointer;transition:.18s;text-align:start;box-shadow:var(--shadow);color:var(--ink);font-family:inherit}
 .choice:hover{border-color:var(--teal);transform:translateY(-2px)}
 .choice.save:hover{border-color:var(--brass)}
 .choice .cic{width:52px;height:52px;flex:none;border-radius:14px;display:flex;align-items:center;justify-content:center}
@@ -67,7 +67,7 @@ body[dir=rtl] .home-hero h1{font-family:var(--f-ar)}
 .choice.save .cic svg{color:var(--brass-d)}
 .choice .ct{flex:1;min-width:0}
 .choice .ct h3{font-size:16.5px;font-weight:700;letter-spacing:-.01em}
-.choice .ct p{font-size:12.5px;color:var(--muted);margin-top:3px;line-height:1.45}
+.choice .ct p{font-size:12.5px;color:#B9CCC9;margin-top:3px;line-height:1.45}
 .choice .arr{color:var(--muted);font-size:20px;flex:none}
 body[dir=rtl] .choice .arr{transform:scaleX(-1)}
 
@@ -79,7 +79,7 @@ body[dir=rtl] .backbtn{transform:scaleX(-1)}
 .stp{flex:1;display:flex;flex-direction:column;align-items:center;gap:5px}
 .stp .dot{width:100%;height:4px;border-radius:3px;background:var(--line)}
 .stp.done .dot,.stp.cur .dot{background:var(--teal)}
-.stp .sl{font-size:10px;color:var(--muted);font-weight:600}
+.stp .sl{font-size:10px;color:#A9BFBB;font-weight:600}
 .stp.cur .sl{color:var(--teal-d)}
 .save .stp.done .dot,.save .stp.cur .dot{background:var(--brass)}
 .save .stp.cur .sl{color:var(--brass-d)}
@@ -87,7 +87,7 @@ body[dir=rtl] .backbtn{transform:scaleX(-1)}
 .lead{margin:22px 0 16px}
 .lead h2{font-family:var(--f-disp);font-weight:700;font-size:22px;letter-spacing:-.02em;line-height:1.2}
 body[dir=rtl] .lead h2{font-family:var(--f-ar)}
-.lead p{color:var(--ink2);font-size:13.5px;margin-top:7px;line-height:1.5}
+.lead p{color:#D3E2DF;font-size:13.5px;margin-top:7px;line-height:1.5}
 
 .card{background:var(--card);border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow)}
 .pad{padding:18px}
@@ -98,7 +98,7 @@ body[dir=rtl] .lead h2{font-family:var(--f-ar)}
 .field:last-child{margin-bottom:0}
 .field label{display:flex;justify-content:space-between;align-items:baseline;gap:8px;font-size:13px;font-weight:600;color:var(--ink);margin-bottom:6px}
 .field label .opt{font-size:10.5px;color:var(--muted);font-weight:500}
-.field .hint{font-size:11px;color:var(--muted);margin-top:5px;line-height:1.4}
+.field .hint{font-size:11px;color:#A9BFBB;margin-top:5px;line-height:1.4}
 .inp{position:relative}
 .inp input{width:100%;border:1px solid var(--line);background:var(--card2);border-radius:12px;padding:13px 14px;font-family:var(--f-disp);font-size:16px;color:var(--ink);outline:none;transition:.16s;-webkit-appearance:none}
 .inp input.txt{font-family:inherit}
@@ -125,7 +125,7 @@ body[dir=rtl] .lead h2{font-family:var(--f-ar)}
 .debt-item:last-child{border-bottom:0}
 .debt-item .di-main{flex:1;min-width:0}
 .debt-item .di-nm{font-weight:700;font-size:14.5px}
-.debt-item .di-meta{font-size:11.5px;color:var(--muted);margin-top:2px}
+.debt-item .di-meta{font-size:11.5px;color:#B2C6C2;margin-top:2px}
 .debt-item .di-bal{text-align:end;font-family:var(--f-disp);font-weight:700;font-size:15px;white-space:nowrap;color:var(--teal-d)}
 .debt-item .di-del{border:0;background:var(--line2);color:var(--muted);width:26px;height:26px;border-radius:8px;cursor:pointer;font-size:16px;line-height:1;flex:none;transition:.14s}
 .debt-item .di-del:hover{background:rgba(229,113,94,.18);color:var(--red)}
@@ -143,7 +143,7 @@ body[dir=rtl] .lead h2{font-family:var(--f-ar)}
 .opt-card.on .oi{background:rgba(255,255,255,.08)}
 .opt-card .om{flex:1}
 .opt-card .om .oh{font-weight:700;font-size:14.5px}
-.opt-card .om .op{font-size:11.5px;color:var(--muted);margin-top:2px;line-height:1.4}
+.opt-card .om .op{font-size:11.5px;color:#B9CCC9;margin-top:2px;line-height:1.4}
 .opt-card .ock{width:22px;height:22px;flex:none;border-radius:50%;border:2px solid var(--line);display:flex;align-items:center;justify-content:center}
 .opt-card.on .ock{border-color:var(--teal);background:var(--teal)}
 .save .opt-card.on .ock{border-color:var(--brass);background:var(--brass)}
@@ -180,7 +180,7 @@ body[dir=rtl] .phero .date{font-family:var(--f-ar)}
 .plan-item.first .idx{box-shadow:0 0 0 3px var(--teal-t)}
 .plan-item .pm{flex:1}
 .plan-item .pm .pn{font-weight:700;font-size:14px}
-.plan-item .pm .pd{font-size:11.5px;color:var(--muted);margin-top:1px}
+.plan-item .pm .pd{font-size:11.5px;color:#B2C6C2;margin-top:1px}
 .plan-item .pv{text-align:end;font-family:var(--f-disp);font-weight:600;font-size:12.5px;color:var(--teal-d);white-space:nowrap}
 .tag{display:inline-block;background:var(--teal);color:#06201E;font-size:9.5px;font-weight:700;padding:2px 8px;border-radius:20px;margin-inline-start:6px;font-family:var(--f-ui)}
 body[dir=rtl] .tag{font-family:var(--f-ar)}
@@ -195,7 +195,7 @@ body[dir=rtl] .tag{font-family:var(--f-ar)}
 .stratbox .so{border:1.5px solid var(--line);border-radius:13px;padding:13px;cursor:pointer;transition:.16s;background:var(--card)}
 .stratbox .so.on{border-color:var(--teal);background:var(--teal-t)}
 .stratbox .so .st2{font-weight:700;font-size:13.5px;display:flex;align-items:center;gap:7px}
-.stratbox .so .sd{font-size:11px;color:var(--muted);margin-top:4px;line-height:1.4}
+.stratbox .so .sd{font-size:11px;color:#B2C6C2;margin-top:4px;line-height:1.4}
 .rec{font-size:9.5px;background:var(--teal);color:#06201E;font-weight:700;padding:2px 7px;border-radius:20px}
 
 .err{background:rgba(229,113,94,.12);border:1px solid rgba(229,113,94,.32);color:#F0A090;border-radius:12px;padding:12px 15px;font-size:12.5px;margin-top:14px;line-height:1.5}
@@ -204,11 +204,11 @@ body[dir=rtl] .tag{font-family:var(--f-ar)}
 .bignum .k{font-size:12.5px;font-weight:600;color:var(--muted)}
 .bignum .v{font-family:var(--f-disp);font-size:42px;font-weight:800;color:var(--brass-d);letter-spacing:-.02em;line-height:1;margin-top:9px}
 .bignum .v small{font-size:15px;font-weight:600;color:var(--muted)}
-.bignum .note{font-size:12.5px;color:var(--ink2);margin-top:11px;line-height:1.5}
+.bignum .note{font-size:12.5px;color:#D3E2DF;margin-top:11px;line-height:1.5}
 .prog{height:10px;background:var(--line2);border-radius:6px;overflow:hidden;margin-top:4px}
 .prog span{display:block;height:100%;background:var(--brass);border-radius:6px;transition:width .4s}
 
-.foot{text-align:center;color:var(--muted);font-size:11px;margin-top:30px;line-height:1.7}
+.foot{text-align:center;color:#93A9A5;font-size:11px;margin-top:30px;line-height:1.7}
 .foot b{color:var(--ink2);font-weight:600}
 .hide{display:none!important}
 
@@ -278,7 +278,7 @@ const T={
   d_remain:"المبلغ المتبقّي", d_remain_h:"اللي باقي عليك تسدده — هذا أساس الخطة",
   d_pay:"القسط الشهري", d_apr:"الفائدة السنوية %", d_apr_h:"اختياري — لو تعرفها الحساب أدقّ",
   add_debt:"أضف الدين", your_debts:"ديونك المُضافة", total_remaining:"إجمالي المتبقّي",
-  d1_empty:"لسه ما أضفت أي دين. عبّي الخانات فوق واضغط «أضف الدين».",
+  d1_empty:"ما أضفت أي دين. عبّي الخانات فوق واضغط «أضف الدين».",
   next_afford:"التالي: كم أقدر أدفع",
   // step2
   d2_h:"كم تقدر تدفع شهرياً لأقساطك؟", d2_p:"هذا المبلغ الكامل اللي بيروح لكل ديونك شهرياً (يشمل الأقساط الدنيا). كل ما زاد، خلصت أسرع.",
@@ -306,7 +306,7 @@ const T={
   err_budget:"مبلغك الشهري أقل من مجموع أقساطك الدنيا.", err_budget2:"لازم يكون على الأقل",
   adjust:"عدّل الأرقام", 
   // savings
-  sv_h:"وش تبي توفّر له؟", sv_p:"اختر نوع هدفك، ونبني لك خطة توصلك له.",
+  sv_h:"شنو تبي توفر له؟", sv_p:"اختر نوع هدفك، ونبني لك خطة توصلك له.",
   sv_buy_h:"شي أبي أشتريه", sv_buy_p:"سيارة، سفر، جهاز... أي هدف بمبلغ محدد.",
   sv_emg_h:"صندوق طوارئ", sv_emg_p:"مبلغ يحميك لو صار طارئ (يُنصح ٣–٦ أشهر مصاريف).",
   sv_gen_h:"توفير عام", sv_gen_p:"أبني عادة ادخار بدون هدف محدد.",
