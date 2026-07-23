@@ -208,6 +208,34 @@ body[dir=rtl] .tag{font-family:var(--f-ar)}
 .prog{height:10px;background:var(--line2);border-radius:6px;overflow:hidden;margin-top:4px}
 .prog span{display:block;height:100%;background:var(--brass);border-radius:6px;transition:width .4s}
 
+.afford .bd{display:flex;justify-content:center;gap:14px;font-size:11.5px;color:var(--ink2);margin-top:8px;font-weight:600;flex-wrap:wrap}
+.bd2{display:flex;justify-content:center;gap:14px;font-size:12px;color:var(--ink2);margin-top:9px;font-weight:700;flex-wrap:wrap}
+.bd2.solo{background:var(--teal-t);border:1px solid var(--line);border-radius:12px;padding:11px 13px;margin-top:12px;justify-content:space-between;font-size:12.5px}
+.bd2 .eq{font-weight:700;color:var(--muted);font-size:11px}
+.bd3{text-align:center;font-size:11px;color:var(--muted);margin-top:8px;font-weight:700}
+.ph-row{display:block;padding:14px 16px;border-bottom:1px solid var(--line2)}
+.ph-row:last-child{border-bottom:0}
+.ph-k{flex:none;font-family:var(--f-disp);font-weight:800;font-size:11px;color:#06201E;background:var(--teal-d);border-radius:8px;padding:4px 9px;margin-top:2px;white-space:nowrap}
+body[dir=rtl] .ph-k{font-family:var(--f-ar)}
+.ph-t{font-size:12.5px;line-height:1.65;color:var(--ink2);font-weight:600}
+.ph-t b{color:#fff;font-family:var(--f-disp)}
+.ph-t .tt{color:var(--muted);font-weight:700}
+body[dir=rtl] .ph-t b{font-family:var(--f-ar)}
+.ph-head{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:9px}
+.ph-tot{font-family:var(--f-disp);font-weight:800;font-size:12.5px;color:var(--teal-d)}
+body[dir=rtl] .ph-tot{font-family:var(--f-ar)}
+.sl{font-size:12.5px;color:var(--ink2);font-weight:600;line-height:1.65;padding:2px 0}
+.sl b{color:#fff;font-family:var(--f-disp)}
+body[dir=rtl] .sl b{font-family:var(--f-ar)}
+.donetag{display:inline-block;background:var(--teal);color:#06201E;font-size:10px;font-weight:800;padding:1px 8px;border-radius:20px;margin-inline-start:6px}
+.srcl{font-size:11.5px;color:var(--brass-d);font-weight:700;line-height:1.65;background:var(--brass-t);border-radius:10px;padding:8px 11px;margin-bottom:9px}
+.srcl b{color:#fff;font-family:var(--f-disp)}
+body[dir=rtl] .srcl b{font-family:var(--f-ar)}
+.srcl .eq{color:var(--muted);font-weight:600;font-size:10.5px}
+.seg2{display:flex;gap:6px;background:var(--line2);padding:5px;border-radius:13px;margin-bottom:14px}
+.seg2 button{flex:1;border:0;background:transparent;color:var(--ink2);font-family:inherit;font-weight:700;font-size:13px;padding:11px 8px;border-radius:9px;cursor:pointer;transition:.16s;line-height:1.3}
+.seg2 button.on{background:var(--card);color:var(--brass-d);box-shadow:var(--shadow)}
+.dirnote{font-size:11.5px;color:var(--muted);font-weight:600;line-height:1.6;margin:-4px 2px 14px;text-align:center}
 .foot{text-align:center;color:#93A9A5;font-size:11px;margin-top:30px;line-height:1.7}
 .foot b{color:var(--ink2);font-weight:600}
 .hide{display:none!important}
@@ -281,15 +309,15 @@ const T={
   d1_empty:"ما أضفت أي دين. عبّي الخانات فوق واضغط «أضف الدين».",
   next_afford:"التالي: كم أقدر أدفع",
   // step2
-  d2_h:"كم تقدر تدفع شهرياً لأقساطك؟", d2_p:"هذا المبلغ الكامل اللي بيروح لكل ديونك شهرياً (يشمل الأقساط الدنيا). كل ما زاد، خلصت أسرع.",
+  d2_h:"كم تقدر تدفع شهرياً لأقساطك؟", d2_p:"هذا مجموع اللي بيروح لكل ديونك شهرياً: أقساطك الدنيا + أي زيادة تقدر عليها فوقها. كل ما زادت الزيادة، تحرّرت أسرع.",
   know_h:"أعرف المبلغ", know_p:"عندي رقم محدد أقدر أخصصه شهرياً.",
   figure_h:"ساعدني أحسبه", figure_p:"أجاوب أسئلة بسيطة عن دخلي ومصاريفي.",
   budget_lbl:"المبلغ الشهري للأقساط",
   fig_income:"دخلك الشهري", fig_income_h:"المعاش + أي دخل إضافي",
   fig_housing:"السكن / الإيجار", fig_food:"الأكل والفواتير", fig_transport:"المواصلات", fig_other:"مصاريف أخرى",
   fig_buffer:"مبلغ تخليه جانب", fig_buffer_h:"للطوارئ أو الترفيه شهرياً",
-  can_pay:"تقدر تخصص لأقساطك", can_pay_note:"= الدخل − المصاريف − المبلغ الجانبي. تقدر تعدّله بالأعلى.",
-  min_needed:"مجموع أقساطك الدنيا", 
+  can_pay:"المجموع اللي بيروح لديونك شهرياً", can_pay_note:"يتحسب تلقائياً من أرقامك فوق — عدّل أي خانة والنتيجة تتغيّر.",
+  min_needed:"مجموع أقساطك الدنيا", your_mins:"أقساطك الدنيا (من الخطوة ١)", remainder_lbl:"الباقي تقدر تزيده فوق أقساطك", extra_over:"زيادتك فوق الأقساط", no_debt_in_exp:"لا تدخل أقساطك ضمن المصاريف هنا — حسبناها لك تلقائياً من الخطوة الأولى.", bd_income:"الدخل", bd_exp:"المصاريف + الجانبي", pay_now:"ادفع عليه", pay_min:"حدّه الأدنى", phases_t:"مراحل التنفيذ", phase:"مرحلة", phase_pay:"ادفع على {name} مبلغ {amt} شهرياً، والباقي حدّه الأدنى — لين يخلص في {date}.", phase_roll:"بعدها حوّل نفس المبلغ كامل للدين اللي بعده.", lender_note:"تعديل قسط قائم (تخفيضه لحدّه الأدنى أو رفعه) يحتاج تنسيق مع الجهة الممولة قبل التطبيق.", monthly_out:"دفعتك الشهرية", pay_full:"سدّده كامل", clear_full:"سدّد {name} كامل ({amt}) — يخلص في {date}، وأي فائض ينتقل تلقائياً للدين اللي بعده بنفس الشهر.", sched_t:"جدول الدفع الشهري", sched_hint:"دفعتك ثابتة كل شهر، بس الزيادة تكبر: كل ما يخلص دين، قسطه ينضاف للزيادة تلقائياً — وهذا سرّ التدحرج. الزيادة تنسكب على الدين رقم ١ أول، وأي فائض يكمل على اللي بعده بنفس الشهر.", month_lbl:"شهر {n}", months_lbl:"الأشهر {a}–{b}", total_lbl:"المجموع", sched_min:"قسطه", sched_extra:"زيادة", sched_minlbl:"الحد الأدنى", sched_rest:"الباقي كله", sched_done:"يخلص", same_zero:"ما دخلت نسب فائدة (أو كلها متساوية)، فالطريقتان يعطيان نفس النتيجة بالضبط — الفرق بينهما يظهر فقط لما تختلف نسب الفوائد بين ديونك.", mins_s:"أقساطك", recon:"كل دينار محسوب: الدخل {inc} = المصاريف والجانبي {sp} + ديونك {tot} \u2713", src_t:"مصدر الزيادة هالشهر", src_base:"زيادتك", src_freed:"{name} المتحرر", src_part:"الفايض من {name}", src_used:"(استُخدم منها {u} فقط للسداد النهائي)", 
   next_plan:"التالي: خطتي",
   // step3
   d3_h:"خطتك للتحرر", dfree:"خالٍ من الديون في", months_left:"شهر للحرية",
@@ -309,15 +337,15 @@ const T={
   sv_h:"شنو تبي توفر له؟", sv_p:"اختر نوع هدفك، ونبني لك خطة توصلك له.",
   sv_buy_h:"شي أبي أشتريه", sv_buy_p:"سيارة، سفر، جهاز... أي هدف بمبلغ محدد.",
   sv_emg_h:"صندوق طوارئ", sv_emg_p:"مبلغ يحميك لو صار طارئ (يُنصح ٣–٦ أشهر مصاريف).",
-  sv_gen_h:"توفير عام", sv_gen_p:"أبني عادة ادخار بدون هدف محدد.",
+  sv_gen_h:"توفير عام", sv_gen_p:"حدّد أي مبلغ يناسبك وعوّد نفسك على الادخار.",
   sv2_buy_h:"هدفك اللي تبي تشتريه", sv2_emg_h:"صندوق الطوارئ", sv2_gen_h:"خطة التوفير",
   sv_goal:"المبلغ المستهدف", sv_current:"الموفّر حالياً", sv_when:"متى تبي توصله؟",
   sv_monthly_exp:"كم مصاريفك الشهرية؟", sv_monthly_exp_h:"نقترح لك هدف = ٦ أشهر منها",
   sv_suggest:"الهدف المقترح", sv_use_suggest:"استخدم المقترح",
-  sv_dir_goal:"أعرف تاريخي", sv_dir_amount:"أعرف مبلغي الشهري", sv_monthly_in:"كم توفّر شهرياً؟",
+  sv_dir_goal:"أعرف تاريخي", sv_dir_amount:"أعرف مبلغي الشهري", sv_dir_note:"«أعرف تاريخي»: حدّد متى تبي توصل ونحسب لك كم توفّر شهرياً. «أعرف مبلغي الشهري»: حدّد كم تقدر توفّر ونحسب لك متى توصل.", sv_monthly_in:"كم توفّر شهرياً؟",
   sv_need:"وفّر هذا المبلغ شهرياً", per_month:"شهرياً", reach_in:"توصل هدفك خلال", on_date:"يعني بتاريخ",
   reach_time:"توصل هدفك خلال", progress:"تقدّمك", of_goal:"من الهدف", left:"باقي",
-  months_u:"شهر", enter_goal:"أدخل مبلغ هدفك عشان نحسب لك الخطة.",
+  months_u:"شهر", enter_goal:"أدخل مبلغ هدفك عشان نحسب لك الخطة.", sv_pos:"أدخل مبلغ شهري أكبر من صفر.",
   see_plan:"شوف خطتي",
   disc:"أداة تخطيط مساعدة — الأرقام تقديرية وقد تختلف حسب شروط جهة التمويل.", saved_note:"بياناتك محفوظة على جهازك.",
   per_year:"سنوياً", min_short:"الحد الأدنى"
@@ -336,15 +364,15 @@ const T={
   add_debt:"Add debt", your_debts:"Your debts", total_remaining:"Total remaining",
   d1_empty:"No debts yet. Fill the fields above and tap \u201cAdd debt\u201d.",
   next_afford:"Next: what you can pay",
-  d2_h:"How much can you pay monthly?", d2_p:"This is the total that goes to all your debts each month (including minimums). The more you pay, the sooner you're free.",
+  d2_h:"How much can you pay monthly?", d2_p:"This is the total going to all your debts monthly: your minimum payments + whatever extra you can add on top. The bigger the extra, the sooner you're free.",
   know_h:"I know the amount", know_p:"I have a set figure I can put toward debt.",
   figure_h:"Help me work it out", figure_p:"Answer a few quick questions about income and expenses.",
   budget_lbl:"Monthly amount for debts",
   fig_income:"Monthly income", fig_income_h:"salary + any extra income",
   fig_housing:"Housing / rent", fig_food:"Food & bills", fig_transport:"Transport", fig_other:"Other expenses",
   fig_buffer:"Set aside", fig_buffer_h:"for emergencies or fun each month",
-  can_pay:"You can put toward debt", can_pay_note:"= income \u2212 expenses \u2212 set-aside. You can edit it above.",
-  min_needed:"Your total minimum payments",
+  can_pay:"Total going to your debts monthly", can_pay_note:"Computed live from your numbers above \u2014 edit any field and it updates.",
+  min_needed:"Your total minimum payments", your_mins:"Your minimums (from step 1)", remainder_lbl:"Left over to add on top of your installments", extra_over:"Extra above your minimums", no_debt_in_exp:"Don't include your installments in these expenses \u2014 we already counted them from step 1.", bd_income:"Income", bd_exp:"Expenses + set-aside", pay_now:"pay", pay_min:"minimum", phases_t:"Execution phases", phase:"Phase", phase_pay:"Pay {amt} monthly on {name}, minimums on the rest \u2014 until it clears in {date}.", phase_roll:"Then roll that full amount into the next debt.", lender_note:"Changing an existing installment (down to its minimum or up) needs coordination with your lender first.", monthly_out:"Your monthly payment", pay_full:"clear it fully", clear_full:"Clear {name} fully ({amt}) — done in {date}; any surplus rolls automatically to the next debt that same month.", sched_t:"Monthly payment schedule", sched_hint:"Your payment stays fixed, but the extra grows: whenever a debt clears, its minimum joins the extra automatically \u2014 that's the rollover. It pours into debt #1 first; any leftover flows to the next the same month.", month_lbl:"Month {n}", months_lbl:"Months {a}\u2013{b}", total_lbl:"Total", sched_min:"min", sched_extra:"extra", sched_minlbl:"minimum", sched_rest:"remaining balance", sched_done:"cleared", same_zero:"You didn't enter interest rates (or they're all equal), so both methods give exactly the same result — the difference only shows when your debts carry different rates.", mins_s:"minimums", recon:"Every dinar accounted: income {inc} = expenses & set-aside {sp} + debts {tot} \u2713", src_t:"This month's extra comes from", src_base:"your extra", src_freed:"{name}'s freed minimum", src_part:"unused part of {name}'s minimum", src_used:"(only {u} of it was needed to finish)",
   next_plan:"Next: my plan",
   d3_h:"Your payoff plan", dfree:"Debt-free by", months_left:"months to freedom",
   total_owed:"Total debt", interest_paid:"Interest", saved_vs:"you save",
@@ -362,15 +390,15 @@ const T={
   sv_h:"What are you saving for?", sv_p:"Pick your goal type and we'll build a plan to reach it.",
   sv_buy_h:"Something to buy", sv_buy_p:"A car, a trip, a device — any goal with a set amount.",
   sv_emg_h:"Emergency fund", sv_emg_p:"A cushion for when things go wrong (3\u20136 months of expenses).",
-  sv_gen_h:"General savings", sv_gen_p:"Build a saving habit without a fixed target.",
+  sv_gen_h:"General savings", sv_gen_p:"Pick any amount that suits you and build the habit.",
   sv2_buy_h:"What you're buying", sv2_emg_h:"Emergency fund", sv2_gen_h:"Savings plan",
   sv_goal:"Target amount", sv_current:"Already saved", sv_when:"When do you want it?",
   sv_monthly_exp:"Your monthly expenses?", sv_monthly_exp_h:"we suggest a goal of 6 months",
   sv_suggest:"Suggested goal", sv_use_suggest:"Use suggested",
-  sv_dir_goal:"I know my date", sv_dir_amount:"I know my monthly amount", sv_monthly_in:"How much monthly?",
+  sv_dir_goal:"I know my date", sv_dir_amount:"I know my monthly amount", sv_dir_note:"\u201cI know my date\u201d: set when you want it and we compute your monthly amount. \u201cI know my monthly amount\u201d: set what you can save and we compute when you arrive.", sv_monthly_in:"How much monthly?",
   sv_need:"Save this much monthly", per_month:"per month", reach_in:"You'll reach it in", on_date:"which is",
   reach_time:"You'll reach it in", progress:"Progress", of_goal:"of goal", left:"left",
-  months_u:"months", enter_goal:"Enter your goal amount to see the plan.",
+  months_u:"months", enter_goal:"Enter your goal amount to see the plan.", sv_pos:"Enter a monthly amount above zero.",
   see_plan:"See my plan",
   disc:"A planning aid — figures are estimates and may differ from your lender's terms.", saved_note:"Your data is saved on your device.",
   per_year:"per year", min_short:"min"
@@ -402,19 +430,20 @@ function simulate(debts,budget,strategy){
   let ds=debts.map(function(d){return {name:d.name,bal:+d.remain,apr:+d.apr||0,min:+d.pay||0,paid:false};});
   const totalMin=ds.reduce(function(s,d){return s+d.min;},0);
   if(budget<totalMin-1e-9) return {error:'budget',totalMin:totalMin};
-  let month=0,ti=0;const order=[];const MAX=1200;
+  let month=0,ti=0;const order=[];const sched=[];const MAX=1200;
   while(ds.some(function(d){return d.bal>0.005;})&&month<MAX){
     month++;
     ds.forEach(function(d){if(d.bal>0.005){var i=d.bal*(d.apr/100/12);d.bal+=i;ti+=i;}});
-    let pool=budget;
-    ds.forEach(function(d){if(d.bal>0.005){var pay=Math.min(d.min,d.bal);d.bal-=pay;pool-=pay;}});
+    let pool=budget;var mpM={},mpE={};
+    ds.forEach(function(d){if(d.bal>0.005){var pay=Math.min(d.min,d.bal);d.bal-=pay;pool-=pay;mpM[d.name]=(mpM[d.name]||0)+pay;}});
     if(pool<0)pool=0;
     let act=ds.filter(function(d){return d.bal>0.005;});
     act.sort(function(a,b){return strategy==='snowball'?a.bal-b.bal:(b.apr-a.apr)||(a.bal-b.bal);});
-    for(var j=0;j<act.length&&pool>0.005;j++){var pay=Math.min(pool,act[j].bal);act[j].bal-=pay;pool-=pay;}
+    for(var j=0;j<act.length&&pool>0.005;j++){var pay=Math.min(pool,act[j].bal);act[j].bal-=pay;pool-=pay;mpE[act[j].name]=(mpE[act[j].name]||0)+pay;}
+    sched.push({m:mpM,e:mpE});
     ds.forEach(function(d){if(d.bal<=0.005&&!d.paid){d.paid=true;order.push({name:d.name,month:month});}});
   }
-  return {months:month,totalInterest:ti,order:order};
+  return {months:month,totalInterest:ti,order:order,schedule:sched};
 }
 function attackOrder(debts,strategy){return debts.slice().sort(function(a,b){return strategy==='snowball'?(+a.remain-+b.remain):((+b.apr||0)-(+a.apr||0))||(+a.remain-+b.remain);});}
 function effectiveBudget(){var a=state.afford;return a.mode==='know'?(+a.budget||0):Math.max(0,(+a.income||0)-(+a.housing||0)-(+a.food||0)-(+a.transport||0)-(+a.other||0)-(+a.buffer||0));}
@@ -500,9 +529,9 @@ function debtStep2(){
   const L=t();const a=state.afford;
   var body;
   if(a.mode==='know'){
-    body='<div class="card pad"><div class="field"><label>'+L.budget_lbl+'</label><div class="inp"><input id="budget" type="number" inputmode="decimal" placeholder="0" value="'+(a.budget||'')+'"><span class="suf">'+csym()+'</span></div></div></div>';
+    body='<div class="card pad"><div class="field"><label>'+L.budget_lbl+'</label><div class="inp"><input id="budget" type="number" inputmode="decimal" placeholder="0" value="'+(a.budget||'')+'"><span class="suf">'+csym()+'</span></div></div></div><div id="knowInfo"></div>';
   }else{
-    body='<div class="card pad">'
+    body='<div class="callout teal" style="margin-bottom:12px"><span class="ci">\u24d8</span><span>'+L.no_debt_in_exp+'</span></div><div class="card pad">'
       +'<div class="field"><label>'+L.fig_income+' <span class="opt">'+L.fig_income_h+'</span></label><div class="inp"><input id="fIncome" type="number" inputmode="decimal" placeholder="0" value="'+(a.income||'')+'"><span class="suf">'+csym()+'</span></div></div>'
       +'<div class="row2">'
         +'<div class="field"><label>'+L.fig_housing+'</label><div class="inp"><input id="fHousing" type="number" inputmode="decimal" placeholder="0" value="'+(a.housing||'')+'"><span class="suf">'+csym()+'</span></div></div>'
@@ -529,9 +558,21 @@ function wireStep2(){
   $('#view').querySelectorAll('.opt-card').forEach(function(o){o.onclick=function(){state.afford.mode=o.dataset.m;saveState();render();};});
   function upd(){
     var eb=effectiveBudget();
-    var af=$('#affordBox');
-    if(af){af.innerHTML='<div class="afford"><div class="k">'+L.can_pay+'</div><div class="v">'+money(eb)+'</div><div class="n">'+L.can_pay_note+'</div></div>';}
     var totalMin=state.debts.reduce(function(s,d){return s+(+d.pay||0);},0);
+    var extra=eb-totalMin;
+    var exCol=extra>=0?'var(--teal-d)':'var(--red)';
+    var split='<span>'+L.your_mins+': <b>'+money(totalMin)+'</b></span><span>'+L.extra_over+': <b style="color:'+exCol+'">'+money(Math.max(0,extra))+'</b></span>';
+    var af=$('#affordBox');
+    if(af){
+      var aa=state.afford;var spent=(+aa.housing||0)+(+aa.food||0)+(+aa.transport||0)+(+aa.other||0)+(+aa.buffer||0);
+      af.innerHTML='<div class="afford"><div class="k">'+L.remainder_lbl+'</div><div class="v" style="color:'+exCol+'">'+money(Math.max(0,extra))+'</div>'
+        +'<div class="bd"><span>'+L.bd_income+' '+money(+aa.income||0)+'</span><span>\u2212 '+L.bd_exp+' '+money(spent)+'</span><span>\u2212 '+L.your_mins+' '+money(totalMin)+'</span></div>'
+        +'<div class="bd2"><span>'+L.can_pay+': <b>'+money(eb)+'</b> <span class="eq">('+L.mins_s+' '+money(totalMin)+' + '+L.sched_extra+' '+money(Math.max(0,extra))+')</span></span></div>'
+        +'<div class="bd3">'+L.recon.replace('{inc}',money(+aa.income||0)).replace('{sp}',money(spent)).replace('{tot}',money(eb))+'</div>'
+        +'<div class="n">'+L.can_pay_note+'</div></div>';
+    }
+    var ki=$('#knowInfo');
+    if(ki){ki.innerHTML=(eb>0)?'<div class="bd2 solo">'+split+'</div>':'';}
     var nb=$('#budgetNote');
     if(eb>0 && eb<totalMin-1e-9){nb.innerHTML='<div class="err">'+L.err_budget+' '+L.err_budget2+' <b>'+money(totalMin)+'</b> ('+L.min_needed+').</div>';}
     else{nb.innerHTML='';}
@@ -556,26 +597,87 @@ function renderPlan(){
   const L=t();const wrap=$('#planWrap');if(!wrap)return;
   var budget=effectiveBudget();
   var totalOwed=state.debts.reduce(function(s,d){return s+(+d.remain||0);},0);
+  var totalMin=state.debts.reduce(function(s,d){return s+(+d.pay||0);},0);
+  var extra=budget-totalMin;
   var sim=simulate(state.debts,budget,state.strategy);
   if(sim.error==='budget'){wrap.innerHTML='<div class="err">'+L.err_budget+' '+L.err_budget2+' <b>'+money(sim.totalMin)+'</b>.</div>';return;}
   var ord=attackOrder(state.debts,state.strategy);
   var payMonth={};sim.order.forEach(function(o){payMonth[o.name]=o.month;});
   var simSnow=simulate(state.debts,budget,'snowball'),simAva=simulate(state.debts,budget,'avalanche');
   var diff=(!simSnow.error&&!simAva.error)?(simSnow.totalInterest-simAva.totalInterest):0;
+  function minsAfter(k){var s=0;for(var j=k+1;j<ord.length;j++)s+=(+ord[j].pay||0);return s;}
   var html='<div class="phero"><div class="lbl">'+L.dfree+'</div><div class="date">'+fmtMonth(sim.months)+'</div><div class="sub">'+nf(sim.months)+' '+L.months_left+'</div>'
-    +'<div class="stat3"><div class="st"><div class="k">'+L.total_owed+'</div><div class="v">'+money(totalOwed)+'</div></div><div class="st"><div class="k">'+L.interest_paid+'</div><div class="v">'+money(sim.totalInterest)+'</div></div></div></div>';
-  // strategy chooser
+    +'<div class="stat3"><div class="st"><div class="k">'+L.total_owed+'</div><div class="v">'+money(totalOwed)+'</div></div><div class="st"><div class="k">'+L.monthly_out+'</div><div class="v">'+money(budget)+'</div></div><div class="st"><div class="k">'+L.interest_paid+'</div><div class="v">'+money(sim.totalInterest)+'</div></div></div></div>';
   html+='<div class="sechead"><h2><span class="bar"></span>'+L.strategy_q+'</h2></div>'
     +'<div class="stratbox">'
       +'<div class="so '+(state.strategy==='avalanche'?'on':'')+'" data-s="avalanche"><div class="st2">'+L.avalanche_t+' <span class="rec">'+L.recommended+'</span></div><div class="sd">'+L.avalanche_d+'</div></div>'
       +'<div class="so '+(state.strategy==='snowball'?'on':'')+'" data-s="snowball"><div class="st2">'+L.snowball_t+'</div><div class="sd">'+L.snowball_d+'</div></div>'
     +'</div>';
-  if(diff>0.5)html+='<div class="callout brass" style="margin-top:12px"><span class="ci">\u2726</span><span>'+L.save_result+' <b>'+money(diff)+'</b>.</span></div>';
+  var aprs=state.debts.map(function(d){return +d.apr||0;});
+  var spread=(aprs.length?Math.max.apply(null,aprs)-Math.min.apply(null,aprs):0);
+  if(spread<0.001)html+='<div class="callout teal" style="margin-top:12px"><span class="ci">\u2726</span><span>'+L.same_zero+'</span></div>';
+  else if(diff>0.5)html+='<div class="callout brass" style="margin-top:12px"><span class="ci">\u2726</span><span>'+L.save_result+' <b>'+money(diff)+'</b>.</span></div>';
   else html+='<div class="callout teal" style="margin-top:12px"><span class="ci">\u2726</span><span>'+L.same_result+'</span></div>';
-  // order
   html+='<div class="sechead"><h2><span class="bar"></span>'+L.plan_title+'</h2></div>'
-    +'<div class="callout teal" style="margin-bottom:12px"><span class="ci">\u25ce</span><span>'+L.plan_hint+'</span></div>'
-    +'<div class="card">'+ord.map(function(d,i){var pm=payMonth[d.name];return '<div class="plan-item'+(i===0?' first':'')+'"><div class="idx">'+nf(i+1)+'</div><div class="pm"><div class="pn">'+esc(d.name||'\u2014')+(i===0?'<span class="tag">'+L.focus_now+'</span>':'')+'</div><div class="pd">'+money(+d.remain||0)+'</div></div><div class="pv">'+L.payoff_by+' '+(pm?fmtMonth(pm):'\u2014')+'</div></div>';}).join('')+'</div>';
+    +'<div class="callout teal" style="margin-bottom:12px"><span class="ci">\u25ce</span><span>'+L.plan_hint+' '+L.extra_over+': <b>'+money(Math.max(0,extra))+'</b>.</span></div>'
+    +'<div class="card">'+ord.map(function(d,i){
+      var pm=payMonth[d.name];
+      var payThis=i===0?(budget-minsAfter(0)):(+d.pay||0);
+      var covered=i===0&&payThis>=(+d.remain||0);
+      var payLbl=covered?L.pay_full:(i===0?L.pay_now:L.pay_min);
+      var payAmt=covered?(+d.remain||0):payThis;
+      return '<div class="plan-item'+(i===0?' first':'')+'"><div class="idx">'+nf(i+1)+'</div>'
+        +'<div class="pm"><div class="pn">'+esc(d.name||'\u2014')+(i===0?'<span class="tag">'+L.focus_now+'</span>':'')+'</div>'
+        +'<div class="pd">'+money(+d.remain||0)+' \u00b7 '+payLbl+' <b style="color:var(--teal-d)">'+money(payAmt)+'</b></div></div>'
+        +'<div class="pv">'+L.payoff_by+' '+(pm?fmtMonth(pm):'\u2014')+'</div></div>';
+    }).join('')+'</div>';
+  var groups=[];(function(){
+    var sch=sim.schedule||[];var prevKey=null;
+    function tt(mp,n){return (mp.m[n]||0)+(mp.e[n]||0);}
+    function kf(mp){return ord.map(function(d){return d.name+':'+(Math.round(tt(mp,d.name)*1000)/1000);}).join('|');}
+    for(var m=0;m<sch.length;m++){
+      var k2=kf(sch[m]);
+      if(k2!==prevKey){groups.push({a:m+1,b:m+1,mp:sch[m]});prevKey=k2;}
+      else{groups[groups.length-1].b=m+1;}
+    }
+    if(groups.length>14){var head=groups.slice(0,6),tail=groups.slice(-3);groups=head.concat([{dots:true}],tail);}
+  })();
+  html+='<div class="sechead"><h2><span class="bar"></span>'+L.sched_t+'</h2></div>'
+    +'<div class="callout teal" style="margin-bottom:12px"><span class="ci">\u25ce</span><span>'+L.sched_hint+'</span></div>'
+    +'<div class="card">'+groups.map(function(g){
+      if(g.dots)return '<div class="ph-row" style="text-align:center;color:var(--muted)">\u22ef</div>';
+      var lbl=g.a===g.b?L.month_lbl.replace('{n}',nf(g.a)):L.months_lbl.replace('{a}',nf(g.a)).replace('{b}',nf(g.b));
+      var tot=0;
+      var freed=[],freedSum=0;
+      ord.forEach(function(d){
+        var off=+d.pay||0;var pmn=payMonth[d.name]||0;
+        if(pmn&&pmn<g.a&&off>0.004){freed.push(L.src_freed.replace('{name}',esc(d.name))+' '+money(off));freedSum+=off;}
+        else if(pmn&&pmn>=g.a&&pmn<=g.b){var m1=g.mp.m[d.name]||0;var un=off-m1;if(un>0.004){freed.push(L.src_part.replace('{name}',esc(d.name))+' '+money(un));freedSum+=un;}}
+      });
+      var baseE=Math.max(0,extra);
+      var avail=baseE+freedSum;
+      var used=0;ord.forEach(function(d){used+=(g.mp.e[d.name]||0);});
+      var src='';
+      if(avail>0.004&&used>0.004){
+        var parts=[];if(baseE>0.004)parts.push(L.src_base+' '+money(baseE));
+        parts=parts.concat(freed);
+        src='<div class="srcl">'+L.src_t+': '+parts.join(' + ')+' = <b>'+money(avail)+'</b>'+((avail-used)>0.01?' <span class="eq">'+L.src_used.replace('{u}',money(used))+'</span>':'')+'</div>';
+      }
+      var lines=ord.map(function(d){
+        var m0=g.mp.m[d.name]||0,e0=g.mp.e[d.name]||0,s=m0+e0;
+        if(s<=0.004)return '';
+        tot+=s;
+        var offMin=+d.pay||0,seg;
+        if(e0>0.004&&m0>0.004)seg=L.sched_min+' '+money(m0)+' + '+L.sched_extra+' '+money(e0)+' = <b>'+money(s)+'</b>';
+        else if(e0>0.004)seg=L.sched_extra+' <b>'+money(e0)+'</b>';
+        else if(m0<offMin-0.004)seg=L.sched_rest+' <b>'+money(m0)+'</b>';
+        else seg=L.sched_minlbl+' <b>'+money(m0)+'</b>';
+        var done=(payMonth[d.name]>=g.a&&payMonth[d.name]<=g.b)?' <span class="donetag">'+L.sched_done+' \u2713</span>':'';
+        return '<div class="sl">'+esc(d.name)+': '+seg+done+'</div>';
+      }).join('');
+      return '<div class="ph-row"><div class="ph-head"><span class="ph-k">'+lbl+'</span><span class="ph-tot">'+L.total_lbl+' '+money(tot)+'</span></div>'+src+lines+'</div>';
+    }).join('')+'</div>'
+    +'<div class="callout brass" style="margin-top:12px"><span class="ci">\u26a0</span><span>'+L.lender_note+'</span></div>';
   wrap.innerHTML=html;
   wrap.querySelectorAll('.stratbox .so').forEach(function(o){o.onclick=function(){state.strategy=o.dataset.s;saveState();renderPlan();};});
 }
@@ -611,12 +713,20 @@ function saveStep2(){
     fields+='<div class="field"><label>'+L.sv_monthly_exp+' <span class="opt">'+L.sv_monthly_exp_h+'</span></label><div class="inp"><input id="sExp" type="number" inputmode="decimal" placeholder="0" value="'+(sv.exp||'')+'"><span class="suf">'+csym()+'</span></div><div id="suggestBox"></div></div>';
   }
   fields+='<div class="field"><label>'+L.sv_goal+'</label><div class="inp"><input id="sGoal" type="number" inputmode="decimal" placeholder="0" value="'+(sv.goal||'')+'"><span class="suf">'+csym()+'</span></div></div>'
-    +'<div class="field"><label>'+L.sv_current+' <span class="opt">'+(state.lang==='ar'?'اختياري':'optional')+'</span></label><div class="inp"><input id="sCur" type="number" inputmode="decimal" placeholder="0" value="'+(sv.current||'')+'"><span class="suf">'+csym()+'</span></div></div>'
-    +'<div class="field"><label>'+L.sv_when+'</label><div class="inp"><input id="sMonths" type="number" inputmode="numeric" placeholder="12" value="'+(sv.months||'')+'"><span class="suf">'+L.months_u+'</span></div></div>';
-  return '<div class="lead"><h2>'+head+'</h2></div><div class="card pad">'+fields+'</div><div id="svResult"></div>';
+    +'<div class="field"><label>'+L.sv_current+' <span class="opt">'+(state.lang==='ar'?'اختياري':'optional')+'</span></label><div class="inp"><input id="sCur" type="number" inputmode="decimal" placeholder="0" value="'+(sv.current||'')+'"><span class="suf">'+csym()+'</span></div></div>';
+  if(sv.dir==='goal'){
+    fields+='<div class="field"><label>'+L.sv_when+'</label><div class="inp"><input id="sMonths" type="number" inputmode="numeric" placeholder="12" value="'+(sv.months||'')+'"><span class="suf">'+L.months_u+'</span></div></div>';
+  }else{
+    fields+='<div class="field"><label>'+L.sv_monthly_in+'</label><div class="inp"><input id="sMonthly" type="number" inputmode="decimal" placeholder="0" value="'+(sv.monthly||'')+'"><span class="suf">'+csym()+'</span></div></div>';
+  }
+  return '<div class="lead"><h2>'+head+'</h2></div>'
+    +'<div class="seg2"><button class="'+(sv.dir==='goal'?'on':'')+'" data-d="goal">'+L.sv_dir_goal+'</button><button class="'+(sv.dir==='amount'?'on':'')+'" data-d="amount">'+L.sv_dir_amount+'</button></div>'
+    +'<div class="dirnote">'+L.sv_dir_note+'</div>'
+    +'<div class="card pad">'+fields+'</div><div id="svResult"></div>';
 }
 function wireSave2(){
   const L=t();const sv=state.sv;
+  $('#view').querySelectorAll('.seg2 button').forEach(function(b){b.onclick=function(){state.sv.dir=b.dataset.d;saveState();render();};});
   function upd(){
     var box=$('#svResult');if(!box)return;
     if(sv.type==='emg'){
@@ -627,12 +737,20 @@ function wireSave2(){
     var remaining=Math.max(0,(+sv.goal||0)-(+sv.current||0));
     var pct=(+sv.goal>0)?Math.min(100,((+sv.current||0)/+sv.goal)*100):0;
     if(!(+sv.goal>0)){box.innerHTML='<div class="sec"><div class="callout brass"><span class="ci">\u25ce</span><span>'+L.enter_goal+'</span></div></div>';return;}
-    var m=Math.max(1,+sv.months||1);var monthly=remaining/m;
-    var html='<div class="sec"><div class="card pad"><div class="bignum"><div class="k">'+L.sv_need+'</div><div class="v">'+money(monthly).split(' ')[0]+' <small>'+csym()+' / '+L.per_month+'</small></div><div class="note">'+L.reach_in+' '+nf(m)+' '+L.months_u+' \u00b7 '+L.on_date+' '+fmtMonth(m)+'</div></div></div>';
+    var html='';
+    if(sv.dir==='goal'){
+      var m=Math.max(1,+sv.months||1);var monthly=remaining/m;
+      html='<div class="sec"><div class="card pad"><div class="bignum"><div class="k">'+L.sv_need+'</div><div class="v">'+money(monthly).split(' ')[0]+' <small>'+csym()+' / '+L.per_month+'</small></div><div class="note">'+L.reach_in+' '+nf(m)+' '+L.months_u+' \u00b7 '+L.on_date+' '+fmtMonth(m)+'</div></div></div>';
+    }else{
+      var mo=+sv.monthly||0;
+      if(mo<=0){box.innerHTML='<div class="sec"><div class="err">'+L.sv_pos+'</div></div>';return;}
+      var months=Math.max(1,Math.ceil(remaining/mo));
+      html='<div class="sec"><div class="card pad"><div class="bignum"><div class="k">'+L.reach_time+'</div><div class="v">'+nf(months)+' <small>'+L.months_u+'</small></div><div class="note">'+L.on_date+' '+fmtMonth(months)+' \u00b7 '+money(mo)+' / '+L.per_month+'</div></div></div>';
+    }
     html+='<div class="card pad" style="margin-top:14px"><div style="display:flex;justify-content:space-between;font-size:12.5px;font-weight:600;margin-bottom:8px"><span>'+L.progress+'</span><span class="num" style="color:var(--brass-d)">'+nf(pct,pct<10?1:0)+'% '+L.of_goal+'</span></div><div class="prog"><span style="width:'+pct+'%"></span></div><div style="display:flex;justify-content:space-between;font-size:11.5px;color:var(--muted);margin-top:8px"><span>'+money(+sv.current||0)+'</span><span>'+L.left+' '+money(remaining)+'</span></div></div></div>';
     box.innerHTML=html;
   }
-  [['sExp','exp'],['sGoal','goal'],['sCur','current'],['sMonths','months']].forEach(function(p){var el=$('#'+p[0]);if(el)el.oninput=function(){state.sv[p[1]]=+el.value||0;saveState();upd();};});
+  [['sExp','exp'],['sGoal','goal'],['sCur','current'],['sMonths','months'],['sMonthly','monthly']].forEach(function(p){var el=$('#'+p[0]);if(el)el.oninput=function(){state.sv[p[1]]=+el.value||0;saveState();upd();};});
   upd();
 }
 
